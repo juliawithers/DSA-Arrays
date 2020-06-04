@@ -3,7 +3,7 @@
 // 1) Implement an Array class from scratch: 
 // Walk through each step of implementing an array. Don't rush through this by copying and pasting the code samples. After you've walked through it and you understand the code of the Array class, hide the sample code and try writing the Array class from scratch using the memory module here for allocating memory.
 
-memory = require('memory')
+memory = require('./memory')
 
 class Array {
     // create length, capacity, and start
@@ -89,7 +89,7 @@ class Array {
     }
 
     // remove
-    remove(index, value) {
+    remove(index) {
         // ensure the current index is valid
         if(index<0 || index >=this.length) {
             throw new Error('index error')
@@ -103,31 +103,4 @@ class Array {
 
 Array.SIZE_RATIO = 3;
 
-// 2) Explore the push() method
-function main(){
-
-    Array.SIZE_RATIO = 3;
-
-    // Create an instance of the Array class
-    let arr = new Array();
-
-    // Add an item to the array
-    arr.push(3);
-    // arr.push(5);
-    // arr.push(15);
-    // arr.push(19);
-    // arr.push(45);
-    // arr.push(10);
-
-    console.log(arr);
-}
-// What is the length, capacity and memory address of your array?
-
-// Add the following in the main function and then print the array:
-    // ...
-    // arr.push(5);
-    // arr.push(15);
-    // arr.push(19);
-    // arr.push(45);
-    // arr.push(10);
-// What is the length, capacity and memory address of your array? Explain the result of your program after adding the new lines of code.
+module.exports = Array;
